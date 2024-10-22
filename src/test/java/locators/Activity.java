@@ -29,12 +29,6 @@ public class Activity {
         driver.quit();
 
 
-
-
-
-
-
-
     }
 }
 
