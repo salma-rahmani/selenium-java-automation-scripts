@@ -12,7 +12,7 @@ public class SecondActivity {
 
         Thread.sleep(2000);
 
-        By subTitleLocator = By.cssSelector(".top-nav__logo.active");
+        By subTitleLocator = By.className("top-nav__logo");
         WebElement subTitleElement = driver.findElement(subTitleLocator);
 
         String result =  subTitleElement.getText();
