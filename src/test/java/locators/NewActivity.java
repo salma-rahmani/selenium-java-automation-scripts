@@ -1,6 +1,5 @@
 package locators;
 
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -22,30 +21,27 @@ public class NewActivity {
         WebElement inputElement = driver.findElement(emailLocator);
         inputElement.sendKeys("selma.1390@gmail.com");
 
-        Thread.sleep(2000);
+        Thread.sleep(1000);
 
         By passwordLocator = By.name("password");
         WebElement passwordElement = driver.findElement(passwordLocator);
         passwordElement.sendKeys("Password786");
 
-        Thread.sleep(2000);
+        Thread.sleep(1000);
 
         By loginLocator = By.id("loginBtn");
         WebElement loginElement = driver.findElement(loginLocator);
         loginElement.click();
 
-        Thread.sleep(2000);
+        Thread.sleep(1000);
 
         By errorLocator = By.className("error");
         WebElement errorElement = driver.findElement(errorLocator);
        String text =  errorElement.getText();
         System.out.println(text);
 
-        Thread.sleep(2000);
+        Thread.sleep(1000);
         driver.quit();
-
-
-
 
 
 
