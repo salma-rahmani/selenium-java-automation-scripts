@@ -10,7 +10,7 @@ public class LabSessionActivityOne {
     public static void main(String[] args) throws InterruptedException {
 
         Scanner input = new Scanner(System.in);
-        System.out.print("Please choose your browser chrome or edge? ");
+        System.out.print("Which browser do you want to choose? chrome/edge? ");
         String userInput = input.next();
 
 
