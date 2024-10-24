@@ -1,5 +1,6 @@
 package locators;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 
@@ -9,29 +10,25 @@ public class LabSessionActivityOne {
     public static void main(String[] args) throws InterruptedException {
 
         Scanner input = new Scanner(System.in);
-        System.out.print("Which browser do you want to open the link? Chrome/Edge:");
+        System.out.print("Please choose your browser chrome or edge? ");
         String userInput = input.next();
-        if (userInput.equals("Chrome")) {
-            ChromeDriver chromeDriver = new ChromeDriver();
-            chromeDriver.get("https://dev.retail.tekschool-students.com/");
-            String title = chromeDriver.getTitle();
-            System.out.println(title);
-            Thread.sleep(3000);
-            chromeDriver.quit();
-
-        } else {
 
 
-            EdgeDriver edgeDriver = new EdgeDriver();
-            edgeDriver.get("https://dev.retail.tekschool-students.com/");
+        WebDriver driver = null;
 
-            String titleForEdge = edgeDriver.getTitle();
-            System.out.println(titleForEdge);
-            Thread.sleep(3000);
-
-            edgeDriver.quit();
-
-
+        if (userInput.equalsIgnoreCase("chrome")) {
+            driver = new ChromeDriver();
+        } else if (userInput.equalsIgnoreCase("edge")) {
+            driver = new EdgeDriver();
         }
+
+        driver.manage().window().maximize();
+        driver.get("https://dev.retail.tekschool-students.com/");
+        System.out.println(driver.getTitle());
+
+        Thread.sleep(3000);
+
+        driver.quit();
+
     }
 }
