@@ -13,12 +13,12 @@ public class XPathActivity {
         Thread.sleep(2000);
 
 
-        By videoXPathLocator = By.xpath("/html/body/div/div/div/div[3]/div/div[2]/div/div/div/div/div[2]/p");
+        By videoXPathLocator = By.xpath("/html/body/div[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/img");
         WebElement videoElement = driver.findElement(videoXPathLocator);
         videoElement.click();
 
 
-        By playStationLocator = By.xpath("/html/body/div/div/div/div[3]/div/div/p[1]");
+        By playStationLocator = By.xpath("/html/body/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/p[1]");
         WebElement playStationElement = driver.findElement(playStationLocator);
         playStationElement.click();
 
