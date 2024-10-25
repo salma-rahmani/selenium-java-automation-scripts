@@ -26,14 +26,13 @@ public class LabSessionActivityTwo {
         By allLocators = By.tagName("h4");
         List<WebElement> searchElements = driver.findElements(allLocators);
 
-        int searchItemNumber = 0;
-        for (WebElement number : searchElements) {
-            searchItemNumber++;
-        }
+            int searchItemNumber = searchElements.size();
 
-        if (searchItemNumber == 3) {
-            System.out.println("The number of searchedItems is equal to three");
-        } else System.out.println("More then three items displayed");
+            if (searchItemNumber == 3) {
+                    System.out.println("The number of searched items is equal to three");
+            } else {
+                    System.out.println("More than three items displayed");
+            }
 
         Thread.sleep(3000);
         driver.quit();
