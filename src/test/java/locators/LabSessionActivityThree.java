@@ -27,7 +27,7 @@ public class LabSessionActivityThree {
         passwordElement.sendKeys("Password786");
         Thread.sleep(1000);
 
-        By loginLocator = By.xpath("/html/body/div[1]/div[1]/div[2]/button/a");
+        By loginLocator = By.xpath("/html/body/main/div[1]/div[1]/div[2]/div[1]/div[2]/form/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/button[1]");
         WebElement loginElement = driver.findElement(loginLocator);
         signInElement.click();
 
