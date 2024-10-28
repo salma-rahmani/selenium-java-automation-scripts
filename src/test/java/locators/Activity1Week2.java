@@ -23,11 +23,15 @@ public class Activity1Week2 {
         searchBtnElement.click();
         Thread.sleep(1000);
 
-        driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/img")).click();
-        String title = driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/h1")).getText();
-        System.out.println( title);
+        WebElement tvElement = driver.findElement(By.xpath("/html/body/div/div[1]/div[1]/div[3]/div/div[1]/p[1]"));
+        tvElement.click();
+
         Thread.sleep(1000);
 
+        WebElement tvSearch = driver.findElement(By.xpath("/html/body/div/div[1]/div[1]/div[3]/div/div[1]/div[2]/h1"));
+        System.out.println(tvSearch.getText());
+
+        Thread.sleep(2000);
         driver.quit();
     }
 }
