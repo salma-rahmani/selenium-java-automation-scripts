@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class Activity1Week2 {
+public class Activity2UsingRelativeXPath {
     public static void main(String[] args) throws InterruptedException {
         WebDriver driver = new ChromeDriver();
 
@@ -13,21 +13,22 @@ public class Activity1Week2 {
         driver.manage().window().maximize();
         Thread.sleep(1000);
 
-        By searchInputLocator = By.xpath("/html/body/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/input");
+        By searchInputLocator = By.xpath("//input[@class='search__input']");
         WebElement searchInputElement = driver.findElement(searchInputLocator);
-        searchInputElement.sendKeys("TV");
+        searchInputElement.sendKeys("Keyboard");
         Thread.sleep(1000);
 
-        By searchBtnLocator = By.xpath("/html/body/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/button");
+        By searchBtnLocator = By.xpath("//button[@class='search__btn']");
         WebElement searchBtnElement = driver.findElement(searchBtnLocator);
         searchBtnElement.click();
         Thread.sleep(1000);
 
-        driver.findElement(By.xpath("/html/body/div/div[1]/div[1]/div[3]/div/div[1]/p[1]")).click();
-        String title = driver.findElement(By.xpath("/html/body/div/div[1]/div[1]/div[3]/div/div[1]/div[2]/h1")).getText();
+        driver.findElement(By.xpath("//div[@class='bg-gray-100']/div/div/img[@alt='NPET K10 Gaming Keyboard']")).click();
+        String title = driver.findElement(By.xpath("//h1[@class='product__name']")).getText();
         System.out.println( title);
         Thread.sleep(1000);
 
         driver.quit();
     }
 }
+
