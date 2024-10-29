@@ -11,6 +11,8 @@ public class LoggedInActivity {
             driver.get("https://retail.tekschool-students.com/");
             driver.manage().window().maximize();
 
+            driver.findElement(By.xpath("//a[@id='signinLink']")).click();
+
             WebElement usernameElement = driver.findElement(By.xpath("//input[@name='email']"));
             WebElement passwordElement = driver.findElement(By.xpath("//input[@name='password']"));
             WebElement loginElement = driver.findElement(By.xpath("//a[@id='signinLink']"));
