@@ -7,7 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.util.List;
 
 
-public class RelativeXPathActivity3 {
+public class SignUpErrorValidationMessagesUsingListAndRelativeXPath {
     public static void main(String[] args) throws InterruptedException {
         ChromeDriver driver = new ChromeDriver();
         driver.get("https://retail.tekschool-students.com/");

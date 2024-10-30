@@ -6,7 +6,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 
 import java.util.Scanner;
 
-public class LabSessionActivityOne {
+public class BrowserSelectionUsingScanner {
     public static void main(String[] args) throws InterruptedException {
 
         Scanner input = new Scanner(System.in);

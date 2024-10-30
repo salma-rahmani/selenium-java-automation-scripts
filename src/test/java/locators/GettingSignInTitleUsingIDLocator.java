@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class UsingNameLocator {
+public class GettingSignInTitleUsingIDLocator {
     public static void main(String[] args) throws InterruptedException {
         ChromeDriver driver = new ChromeDriver();
         driver.get("https://retail.tekschool-students.com/");
@@ -17,26 +17,14 @@ public class UsingNameLocator {
 
         signInElement.click();
 
+        By subTitleLocator = By.className("login__subtitle");
+        WebElement subTitleElement = driver.findElement(subTitleLocator);
 
-        By inputLocator = By.name("email");
-        WebElement inputElement = driver.findElement(inputLocator);
-        inputElement.sendKeys("selma.1390@gmail.com");
-        Thread.sleep(2000);
-
-        By passwordLocator = By.name("password");
-        WebElement passwordElement = driver.findElement(passwordLocator);
-        passwordElement.sendKeys("Password786");
-        Thread.sleep(2000);
-
-        By loginLocator = By.id("loginBtn");
-        WebElement loginElement = driver.findElement(loginLocator);
-
-        signInElement.click();
+        String result =  subTitleElement.getText();
+        System.out.println(result);
 
         Thread.sleep(2000);
-
         driver.quit();
-
 
     }
 }
