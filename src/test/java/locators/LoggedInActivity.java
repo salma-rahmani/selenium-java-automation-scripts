@@ -49,8 +49,8 @@ public class LoggedInActivity {
 
             driver.findElement(By.xpath("//button[@class='product__btn']")).click();
 
-            WebElement cartCountElement = driver.findElement(By.xpath("//span[@class='top-nav__cart-quantity']"));
-            String cartCount = cartCountElement.getText();
+            WebElement cartElement = driver.findElement(By.xpath("//span[@class='top-nav__cart-quantity']"));
+            String cartCount = cartElement.getText();
 
             if (cartCount.equals("1")) {
                 System.out.println("Keyboard added to cart.");
