@@ -13,23 +13,49 @@ public class LoggedInActivity {
 
             driver.findElement(By.xpath("//a[@id='signinLink']")).click();
 
-            WebElement usernameElement = driver.findElement(By.xpath("//input[@name='email']"));
-            WebElement passwordElement = driver.findElement(By.xpath("//input[@name='password']"));
-            WebElement loginElement = driver.findElement(By.xpath("//a[@id='signinLink']"));
+           driver.findElement(By.xpath("//input[@name='email']")).sendKeys("rahmani049@gmail.com");
+           driver.findElement(By.xpath("//input[@name='password']")).sendKeys("Password123!!");
+           Thread.sleep(1000);
+            driver.findElement(
+                            By.xpath("//button[text() = 'Login']"))
+                    .click();
 
-            usernameElement.sendKeys("rahmani049@gmail.com");
-            passwordElement.sendKeys("Password123!!");
-            loginElement.click();
+            Thread.sleep(1000);
 
-            Thread.sleep(2000);
+            boolean isLogoutDisplayed = driver.findElement(
+                            By.xpath("//button[text() = 'Log out']"))
+                    .isDisplayed();
 
-            By elementLocator = By.xpath("//a[@id='orderLink']");
-            WebElement element = driver.findElement(elementLocator);
+            if (isLogoutDisplayed) {
+                System.out.println("Yes Logged In");
+            }else {
+                System.out.println("No");
+            }
 
-            if (element.isDisplayed()) {
-                System.out.println("Displayed");
+            driver.findElement(
+                            By.xpath("//input[@id='searchInput']"))
+                    .sendKeys("Keyboard");
+            driver.findElement(
+                            By.xpath("//button[@class='search__btn']"))
+                    .click();
+
+            Thread.sleep(1000);
+
+            driver.findElement(
+                            By.xpath("//div[@class='products']/div[1]/p[@class='products__name']"))
+                    .click();
+
+            Thread.sleep(1000);
+
+            driver.findElement(By.xpath("//button[@class='product__btn']")).click();
+
+            WebElement cartCountElement = driver.findElement(By.xpath("//span[@class='top-nav__cart-quantity']"));
+            String cartCount = cartCountElement.getText();
+
+            if (cartCount.equals("1")) {
+                System.out.println("Keyboard added to cart.");
             } else {
-                System.out.println("Not Displayed.");
+                System.out.println("Not added.");
             }
 
 
