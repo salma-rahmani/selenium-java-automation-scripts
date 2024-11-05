@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
 
-public class SelectPractice {
+public class SelectDropDownExampleSingleSelection {
     public static void main(String[] args) throws InterruptedException {
         WebDriver driver = new ChromeDriver();
         String url = "https://retail.tekschool-students.com/selenium/dropdown";
@@ -16,16 +16,13 @@ public class SelectPractice {
 
         WebElement selectDropdownElement = driver.findElement(By.xpath("//select[@name = 'language']"));
 
-        Select select = new Select(selectDropdownElement);
+        Select selectDropdown = new Select(selectDropdownElement);
+        selectDropdown.selectByIndex(1);
         Thread.sleep(1000);
-        select.selectByIndex(1);
-        Thread.sleep(1000);
-
-        select.deselectByVisibleText("C++");
-
+        selectDropdown.selectByVisibleText("C++");
         Thread.sleep(1000);
 
-        List<WebElement> options = select.getOptions();
+        List<WebElement> options = selectDropdown.getOptions();
         for (WebElement option : options) {
             System.out.println(option.getText());
         }
