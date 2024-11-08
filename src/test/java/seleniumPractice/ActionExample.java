@@ -20,6 +20,7 @@ public class ActionExample {
         WebElement usernameField = driver.findElement(By.id("email"));
 
         Actions actions = new Actions(driver);
+        actions.click(usernameField).perform();
 
 
         for (char character : "username".toCharArray()) {
