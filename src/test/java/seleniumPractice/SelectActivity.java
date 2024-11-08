@@ -17,7 +17,7 @@ public class SelectActivity {
         driver.get(url);
 
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
         WebElement selectDropdownElement = wait.until(
                 ExpectedConditions.visibilityOfElementLocated(By.xpath("//select[@name = 'language']")));
